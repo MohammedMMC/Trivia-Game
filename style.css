@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --hard: red;
+  --medium: rgb(255, 166, 0);
+  --easy: rgb(30, 255, 0);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #181d20;
+  padding: 0 10px;
+}
+
+section {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+#startGame form {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 0.8cm;
+}
+
+input,
+select {
+  border: none;
+  outline: none;
+  background-color: #7977da48;
+  border: 2px solid #6b77ba;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: larger;
+  width: 100%;
+}
+
+button {
+  background-color: #7977da48;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: larger;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 5px #6b77ba;
+  transition: box-shadow 200ms;
+}
+
+button:disabled {
+  filter: brightness(70%);
+  cursor: no-drop;
+}
+
+button:not(:disabled):hover {
+  box-shadow: 0 0 1px #6b77ba;
+  border: 2px solid #6b77ba;
+}
+
+h1 {
+  text-align: center;
+}
+
+#startGame form button {
+  margin-top: 10px;
+}
+
+#gameBoard {
+  max-width: 550px;
+  transition: cubic-bezier(0.4, 0, 1, 1) height 450ms;
+}
+
+#gameBoard .message {
+  font-size: x-large;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+#gameBoard #questionsInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.2cm;
+}
+
+#gameBoard #questionsInfo span {
+  font-size: larger;
+  position: relative;
+  max-width: 150px;
+}
+
+#gameBoard #questionsInfo span:nth-child(2) {
+  font-weight: 600;
+}
+
+#gameBoard #question {
+  font-size: calc(13px + 0.7vw);
+  margin-bottom: 20px;
+}
+
+#gameBoard #ans4A,
+#gameBoard #ansTF {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+#gameBoard #ans4A button,
+#gameBoard #ansTF button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: none;
+  border: 2px dashed #6b77ba;
+  background-color: #7977da48;
+  min-height: 100px;
+  min-width: min(calc(80px + 20vw), 300px);
+  font-size: x-large;
+  font-weight: 500;
+  transition: transform 250ms, filter 250ms, border 250ms,
+    background-color 250ms;
+}
+
+#gameBoard #ans4A button.selectedans,
+#gameBoard #ansTF button.selectedans {
+  filter: brightness(120%) !important;
+}
+
+#gameBoard #ans4A button.wrongans,
+#gameBoard #ansTF button.wrongans {
+  border: 2px dashed #ba6b92;
+  background-color: #da77a048;
+  filter: brightness(80%);
+}
+
+#gameBoard #ans4A button.correctans,
+#gameBoard #ansTF button.correctans {
+  border: 2px dashed #6bbaa4;
+  background-color: #77daac48;
+  filter: brightness(80%);
+}
+
+#gameBoard #ans4A button:not(:disabled):hover,
+#gameBoard #ansTF button:not(:disabled):hover {
+  transform: scale(105%);
+  filter: brightness(115%);
+}
+
+#endGame h1 {
+  margin-bottom: 0.5cm;
+  font-size: xx-large;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+#endGame p {
+  margin-bottom: 8px;
+  font-size: large;
+}
+
+#endGame p span {
+  font-weight: 800;
+}
+
+#endGame #questionCount {
+  color: #6b77ba;
+}
+
+#endGame #correctCount {
+  color: #6bbaa4;
+}
+
+#endGame #wrongCount {
+  color: #ba6b92;
+}
+
+#endGame button {
+  margin-top: 0.5cm;
+  font-size: medium;
+}
+
+#goBack {
+  position: absolute;
+  top: 8vh;
+  left: 10vw;
+  font-size: large;
+  font-weight: 500;
+  cursor: pointer;
+  color: #ccc;
+  transition: transform 300ms;
+  text-decoration: none;
+}
+
+#goBack:hover {
+  transform: scale(110%);
+}
+
+#startGame,
+#gameBoard,
+#ansTF,
+#ans4A,
+#question,
+#questionsInfo,
+#endGame,
+#goBack {
+  display: none;
+}
