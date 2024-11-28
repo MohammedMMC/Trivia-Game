@@ -16,4 +16,4 @@ At the end of the game, you'll get a detailed score shoing how mayny questions y
 
 ## 🚀 Play Now
 
-Play the game live here.
+Play the game live [here](https://mohammedmmc.github.io/Mini-Games/Trivia-Game/).
